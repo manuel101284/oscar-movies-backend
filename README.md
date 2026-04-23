@@ -56,18 +56,27 @@ src/main/java/com/apioscarsmovies/backend/
 ### Pasos
 
 **1. Clonar el repositorio**
-   ```bash
-   git clone https://github.com/manuel101284/oscar-movies-backend.git
-   cd oscar-movies-backend
+```bash
+git clone https://github.com/manuel101284/oscar-movies-backend.git
+cd oscar-movies-backend
+```
 
-**2. Configurar Variables de Entorno**
+
+**2. Configurar variable de entorno**
+```bash
 export MONGODB_URI="mongodb+srv://usuario:contraseña@cluster.mongodb.net/mydb?retryWrites=true&w=majority"
+```
+
 
 **3. Ejecutar la aplicación**
+```bash
 ./mvnw spring-boot:run
+```
+
 
 **4. La API estará disponible en:**
 http://localhost:8080
+
 
 **5. 📡 Endpoints de la API**
 Películas
@@ -88,12 +97,43 @@ Estadísticas
 Método	Endpoint	Descripción
 GET	/api/movies-oscar/stats/count	Cantidad total de películas
 
-**6.  🌐 Frontend**
-Este backend está diseñado para funcionar con el frontend Angular:
-[oscar-movies-frontend]https://github.com/manuel101284/oscar-movies-frontend
 
-**7. 📄 Licencia**
+**6. 📝 Ejemplos de uso**
+Obtener todas las películas
+```bash
+curl http://localhost:8080/api/movies-oscar
+```
+
+Crear una nueva película
+```bash
+curl -X POST http://localhost:8080/api/movies-oscar \
+  -H "Content-Type: application/json" \
+  -d '{
+    "titleMovie": "Oppenheimer",
+    "directorMovie": "Christopher Nolan",
+    "yearMovie": 2023,
+    "durationMovie": 180,
+    "actressMovie": "Emily Blunt",
+    "actorMovie": "Cillian Murphy"
+  }'
+```
+
+Buscar por título
+```bash
+curl "http://localhost:8080/api/movies-oscar/search/title?title=Godfather"
+```
+
+
+**7. 🌐 Frontend**
+Este backend está diseñado para funcionar con el frontend Angular:
+[oscar-movies-frontend](https://github.com/manuel101284/oscar-movies-frontend)
+
+
+
+**8.📄 Licencia**
 MIT License
 
-**8. ✒️ Autor**
-Manuel Ricardo Castellanos - [GitHub]https://github.com/manuel101284
+
+
+**9. ✒️ Autor**
+Manuel Ricardo Castellanos - [GitHub](https://github.com/manuel101284)

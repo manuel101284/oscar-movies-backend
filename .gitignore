@@ -33,4 +33,7 @@ build/
 .vscode/
 
 ### Conection to DB ###
-.application.properties.local
+/src/main/resources/application.properties
+
+### Environment Variables ###
+/src/.env
